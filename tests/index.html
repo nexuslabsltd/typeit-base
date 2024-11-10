@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mocha Tests</title>
+
+  <!-- Include Mocha CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mocha/mocha.css" />
+  <!-- Include Mocha JS -->
+  <script src="https://cdn.jsdelivr.net/npm/mocha/mocha.js"></script>
+  <!-- Include Chai JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chai/chai.js"></script>
+
+  <style>
+    body {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="mocha"></div>
+
+  <!-- Include your test script -->
+  <script src="./tests.spec.js" defer></script>
+
+  <!-- Initialize Mocha and run tests -->
+  <script>
+    // Mocha setup
+    mocha.setup('bdd');
+    const { assert } = chai;  // Access Chai's assert
+
+    window.addEventListener("DOMContentLoaded", function () {
+      // Now you can start Mocha
+      mocha.run();
+    });
+  </script>
+</body>
+
+</html>
